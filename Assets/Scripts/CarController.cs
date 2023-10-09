@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.CompilerServices;
-using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,8 +7,8 @@ public class CarController : MonoBehaviour
     public Rigidbody carRigidbody;
     public Transform type;
 
-    [SerializeField] private GasController _car;
-    [SerializeField] private CarCollider _carCollider;
+    [SerializeField] private GasController gasCar;
+    [SerializeField] private CarCollider carCollider;
 
     private float _yAxisRotation, _turnInput;
     private bool _throttleInput, _brakeInput;
@@ -23,23 +19,23 @@ public class CarController : MonoBehaviour
     {
         _initialTypeOffset = type.transform.localPosition;
 
-        _car.Init();
-        Debug.Log("has gas?" + _car.hasGas);
+        gasCar.Init();
+        Debug.Log("has gas?" + gasCar.hasGas);
     }
 
     private void TurnAngle()
     {
-        _yAxisRotation += turnSpeed * turnSpeed * Time.deltaTime;
+        _yAxisRotation += _turnInput * turnSpeed * Time.deltaTime;
 
         type.position = transform.position + _initialTypeOffset;
         type.eulerAngles = new Vector3(0, _yAxisRotation, 0);
-        _carCollider.transform.eulerAngles = type.eulerAngles;
+        carCollider.transform.eulerAngles = type.eulerAngles;
     }
 
     // FixedUpdate has a constant 60 frames per second
     void FixedUpdate()
     {
-        if (_car.hasGas)
+        if (gasCar.hasGas)
         {
             TurnAngle();
             CarInMotion();

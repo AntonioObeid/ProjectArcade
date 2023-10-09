@@ -1,15 +1,12 @@
-using System;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CarHealth : MonoBehaviour
 {
-    public int HealthPulse;
+    public int healthPulse;
     [SerializeField] private int currentHealthPulse;
 
     private void Start() => Init();
-    public void Init() => InitialHealth(HealthPulse);
+    public void Init() => InitialHealth(healthPulse);
 
     internal void InitialHealth(int value) => currentHealthPulse = value;
 

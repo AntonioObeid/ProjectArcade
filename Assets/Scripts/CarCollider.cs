@@ -3,7 +3,7 @@ using UnityEngine;
 public class CarCollider : MonoBehaviour
 {
     [SerializeField] private BoxCollider _boxCollider;
-    [SerializeField] private CarHealth _carHealth;
+    [SerializeField] private CarHealth carHealth;
     [SerializeField] private CarInfo carInfo;
     
     // Start is called before the first frame update
@@ -16,13 +16,14 @@ public class CarCollider : MonoBehaviour
     {
         if (other.gameObject.CompareTag("WallsOfDoom"))
         {
-            Debug.Log("DoomedByWalls" + other.gameObject.name);
+            Debug.Log("DoomedByWalls " + other.gameObject.name);
         }
         else if (other.gameObject.GetComponentInParent<CarInfo>().ID != carInfo.ID)
         {
-            Debug.Log("TheRideToHell has been Hit" + other.gameObject.name);
+            Debug.Log("TheRideToHell has been Hit " + other.gameObject.name);
+            
             int amount = other.gameObject.GetComponentInParent<CarDamage>().DamageAmount;
-            _carHealth.UpdateHealthPulse(amount);
+            carHealth.UpdateHealthPulse(amount);
         }
     }
 }

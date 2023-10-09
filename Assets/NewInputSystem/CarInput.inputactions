@@ -35,17 +35,6 @@
             ],
             "bindings": [
                 {
-                    "name": "",
-                    "id": "67ca1909-b364-4296-b3fb-8c5e27f6b495",
-                    "path": "<Keyboard>/w",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Throttle",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
                     "name": "1D Axis",
                     "id": "678079fd-29de-48cf-93c6-30e6fe4ef40e",
                     "path": "1DAxis",
@@ -86,6 +75,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "Brake",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3de9ef05-b663-4080-a2ab-926b41221dad",
+                    "path": "<Keyboard>/w",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Throttle",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

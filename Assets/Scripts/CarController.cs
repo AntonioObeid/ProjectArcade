@@ -29,7 +29,7 @@ public class CarController : MonoBehaviour
 
     private void TurnAngle()
     {
-        _yAxisRotation += turnSpeed * turnSpeed * Time.deltaTime;
+        _yAxisRotation += _turnInput * turnSpeed * Time.deltaTime;
 
         type.position = transform.position + _initialTypeOffset;
         type.eulerAngles = new Vector3(0, _yAxisRotation, 0);

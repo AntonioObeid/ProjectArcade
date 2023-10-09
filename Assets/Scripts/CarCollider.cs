@@ -18,11 +18,11 @@ public class CarCollider : MonoBehaviour
         {
             Debug.Log("DoomedByWalls" + other.gameObject.name);
         }
-        else if (other.gameObject.GetComponentInParent<CarInfo>().ID != carInfo.ID)
+        /*else if (other.gameObject.GetComponentInParent<CarInfo>().ID != carInfo.ID)
         {
             Debug.Log("TheRideToHell has been Hit" + other.gameObject.name);
             int amount = other.gameObject.GetComponentInParent<CarDamage>().DamageAmount;
             _carHealth.UpdateHealthPulse(amount);
-        }
+        }*/
     }
 }
